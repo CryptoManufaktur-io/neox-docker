@@ -7,3 +7,4 @@
 custom.yml
 private-config/*
 !private-config/.hidden
+neox/geth.zip
