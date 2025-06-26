@@ -1,0 +1,9 @@
+.env*
+*.swp
+*.swo
+*.swn
+*.bak
+*.original
+custom.yml
+private-config/*
+!private-config/.hidden
