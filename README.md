@@ -23,15 +23,21 @@ The `./neoxd` script can be used as a quick-start:
 
 To update the software, run `./neoxd update` and then `./neoxd up`
 
-The repo supports both local and remote files for `genesis.json` the binary ZIP. Using `https://` or `file://`
+### Executable file and genesis.json
+
+The repo supports both local and remote files for `genesis.json`. Using `https://` or `file://`
 it can detect to download the file or use a locally mounted file.
 
-To use a locally mounted file, add the files to `private-config` folder and then set the path as follows.
+To use a locally mounted file, add the genesis file to `private-config` folder and then set the path as follows.
 
 ```properties
 GENESIS_URL=file:///tmp/private-config/genesis.json
-BINARY_URL=file:///tmp/private-config/geth.zip
 ```
+
+Leave `BINARY_URL` empty and copy in a `neox/geth.zip` if using a ZIP file for geth, or set `BINARY_URL` to a
+`https://` URL.
+
+These work-arounds are necessary as long as the Neo X repo itself is private.
 
 ## Customization
 
