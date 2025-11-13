@@ -40,6 +40,7 @@ services:
       - ${NETWORK_ID}
       - --port
       - ${P2P_PORT:-30301}
+      - --authrpc.port=8561
       - --maxpeers
       - "50"
       - --syncmode
@@ -47,6 +48,7 @@ services:
       - --bootnodes
       - ${BOOT_NODES}
       - --http
+      - --http.api=admin,eth,debug,miner,net,txpool,personal,web3,dbft
       - --http.addr
       - 0.0.0.0
       - --http.port
@@ -58,6 +60,7 @@ services:
       - 0.0.0.0
       - --ws.port
       - ${WS_PORT:-8546}
+      - --ws.api=eth,net,web3
       - --ws.origins=*
       - --metrics
       - --metrics.expensive
