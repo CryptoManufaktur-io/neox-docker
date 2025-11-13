@@ -39,7 +39,7 @@ if [ -n "${GENESIS_URL}" ]; then
       wget "$GENESIS_URL" -O /var/lib/neox/genesis.json
     fi
 
-    geth init --datadir=/var/lib/neox /var/lib/neox/genesis.json
+    geth init --datadir=/var/lib/neox --state.scheme="${INIT_STATE_SCHEME}" /var/lib/neox/genesis.json
   fi
 fi
 
