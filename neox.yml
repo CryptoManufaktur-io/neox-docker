@@ -40,11 +40,15 @@ services:
       - ${NETWORK_ID}
       - --port
       - ${P2P_PORT:-30301}
+      - --discovery.port
+      - ${P2P_PORT:-30301}
       - --authrpc.port=8561
       - --maxpeers
       - "50"
       - --syncmode
       - full
+      - --gcmode
+      - archive
       - --bootnodes
       - ${BOOT_NODES}
       - --http
