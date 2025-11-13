@@ -21,6 +21,7 @@ services:
       - LOG_LEVEL=${LOG_LEVEL:-info}
       - GENESIS_URL=${GENESIS_URL}
       - EXTRAS=${EXTRAS:-}
+      - INIT_STATE_SCHEME=${INIT_STATE_SCHEME:-hash}
     volumes:
       - neox-data:/var/lib/neox
       - /etc/localtime:/etc/localtime:ro
