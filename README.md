@@ -44,7 +44,7 @@ These work-arounds are necessary as long as the Neo X repo itself is private.
 `custom.yml` is not tracked by git and can be used to override anything in the provided yml files. If you use it,
 add it to `COMPOSE_FILE` in `.env`
 
-The public HTTP API is limited to `eth,net,txpool,web3`; the `admin`, `debug`, `miner` and `personal` namespaces can rewind the chain, write files or profile the node. If you really need one, append `--http.api=...` through `EXTRAS` in `.env` (the last flag wins).
+The public HTTP API is limited to `eth,net,txpool,web3`; the `admin`, `debug`, `miner` and `personal` namespaces can rewind the chain, write files or profile the node. To re-enable one, for example `debug`, set `EXTRAS=--http.api=eth,net,txpool,web3,debug` in your untracked `.env` and re-create the container (`./neoxd up`); `EXTRAS` is appended after the built-in flags and the last `--http.api` wins, so no tracked file needs editing. The WebSocket API is limited to `eth,net,web3` and can be changed the same way with `--ws.api=...`.
 
 ## Version
 
