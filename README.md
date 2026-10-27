@@ -44,6 +44,8 @@ These work-arounds are necessary as long as the Neo X repo itself is private.
 `custom.yml` is not tracked by git and can be used to override anything in the provided yml files. If you use it,
 add it to `COMPOSE_FILE` in `.env`
 
+The public HTTP API is limited to `eth,net,txpool,web3`; the `admin`, `debug`, `miner` and `personal` namespaces can rewind the chain, write files or profile the node. If you really need one, append `--http.api=...` through `EXTRAS` in `.env` (the last flag wins).
+
 ## Version
 
 Neo X Docker uses a semver scheme.
